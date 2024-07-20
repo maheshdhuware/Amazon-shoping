@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyUser(){
+            var userId = document.getElementById("UserId").value;
+            var error = document.getElementById("error");
+            fetch("../data/users.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(users){
+                 for(var user of users)
+                 {
+                    if(userId.length<4){
+                        error.innerHTML = "Name too short".fontcolor('red');
+                    } else {
+                        if(user.UserId===userId){
+                          error.innerHTML = "User Id Taken - Try Another".fontcolor('red');
+                          break;
+                        } else {
+                            error.innerHTML = "User Id Available".fontcolor('green');
+                        }
+                    }
+                 }
+            })
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Id</dt>
+        <dd><input onkeyup="VerifyUser()" type="text" id="UserId"></dd>
+        <dd id="error"></dd>
+    </dl>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categeries = ["Home", "footwear", "electronics", "fashion",];
+
+
+        function bodyload() {
+            categeries.push("contact");
+            categeries.unshift("amazon");
+            categeries.splice(2,0,"seveice");            
+            categeries.map(function (categery) {
+                var span = document.createElement("span");
+                span.innerHTML = `<a href ='# {category}'>${categery}</a>`;
+                document.querySelector("nav").appendChild(span);
+            })
+        }
+    </script>
+    <style>
+        nav {
+            padding: 20px;
+            color: white;
+            background-color: black;
+            display: flex;
+            font-size: 20px;
+            font-family: arial;
+            justify-content: space-between;
+        }
+        nav a{
+            text-decoration: none;
+            color:white;
+        }
+    </style>
+</head>
+
+<body onload="bodyload()">
+
+
+    <nav></nav>
+
+
+</body>
+
+</html>

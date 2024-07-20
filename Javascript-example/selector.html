@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CreateClick(){
+           folderName =  prompt("Enter Folder Name");
+           if(folderName=="")
+           {
+              alert("Folder Name Can't be Empty");
+           }
+           else if(folderName==null)
+           {
+              alert("You canceled..");
+           } else {
+             document.querySelector("p").innerHTML += folderName + "<br>";
+           }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="CreateClick()">Create Folder</button>
+    <p></p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!-- example on  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Account Creation</title>
+  <link rel="icon" href="logo1.png">
+
+
+</head>
+
+<body>
+  <div>
+    <h2><u>Account Creation Page</u></h2>
+    <form action="newuser.html" method="post">
+      <label for="fna">Fullname</label>
+      <span>*</span><br>
+      <input type="text" id="fna" name="fna" required autofocus>
+      <br>
+      <label for="pwd">set Password</label>
+      <span>*</span> <bR>
+      <input type="password" id="pwd" name="pwd" required>
+      <br>
+      <label for="phone">Contact number</label> <span>*</span> <br>
+      <input type="text" id="phone" name="phone" required maxlength="10">
+      <br>
+      <label for="em">Email Id</label>
+      <span>*</span> <bR>
+      <input type="email" id="em" name="em" required>
+      <br>
+      <label for="dob">Date of Birth</label> <br>
+      <input type="date" id="dob" name="dob" min="1900-01-01" max="2024-03-06">
+      <bR>
+      <label>Gender:</label> <br>
+      <input type="radio" id="g1" name="gen"> <label>Female</label> &nbsp;
+      <input type="radio" id="g2" name="gen"> <label>Male</label> &nbsp;
+      <input type="radio" id="g3" name="gen"> <label>Others</label>
+      <br>
+      <input type="checkbox" id="tc" name="tc" required> <label>I Accepted all terms & conditions</label>
+      <bR>
+
+      <h4>Captch Code</h4>
+      <input type="text" placeholder="Enter Captcha Code" id="inCaptcha" onkeyup="InputCp()">
+      <p id="Captcha"></p>
+      <p id="cpErr"></p>
+      <button type="submit">Create User</button>
+    </form>
+  </div>
+
+  <script>
+
+    let a = Math.floor(Math.random() * 10)
+    let b = Math.floor(Math.random() * 10)
+    let c = Math.floor(Math.random() * 10)
+    let d = Math.floor(Math.random() * 10)
+
+    let value = `${a}${b}${c}${d}`
+    document.getElementById("Captcha").innerHTML = value
+    function InputCp() {
+      let inCaptch = document.getElementById('inCaptcha')
+      if (inCaptch.value !== value) {
+        document.getElementById('cpErr').innerHTML = "Wrong Captcha".fontcolor("red")
+      }else{
+        document.getElementById('cpErr').innerHTML = "Correct Captcha".fontcolor("green")
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>

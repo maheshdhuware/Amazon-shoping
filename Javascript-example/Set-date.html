@@ -1,0 +1,17 @@
+<script>
+    var Mfd = new Date();
+    var weekdays = ["Sunday","Monday","Tuseday","wednesday","Thuresday","Friday","Saturday"];
+    var months = ["jaunwary","febuary",'march','april','may','jun',"juli","augst"];
+    Mfd.setHours(13)
+    //console.log(Mfd.getDay())
+    var hours = Mfd.getHours();
+     if(hours>=0 && hours<=12){
+         document.write("Good morning");
+     }else if(hours>=12 && hours<=17){
+         document.write("Good Afternoon");
+     }else if(hours>=18 && hours<=23){
+         document.write("Good Evening");
+     }
+     document.write(`${weekdays[Mfd.getDay()]}  ${months[Mfd.getMonth()]} ${Mfd.getDate()}, ${Mfd.getFullYear()}`);
+     //document.write(`hours = ${hours}<br>weekdays = ${weekdays}<br>months = ${months} `)
+ </script>

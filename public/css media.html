@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (min-width:600px)
+        {
+           nav {
+             display: flex;
+             justify-content: space-between;
+             border:1px solid gray;
+             padding: 10px;
+             font-family: Arial;
+           }
+           .nav-items span {
+              margin-right: 50px;
+              font-size: 25px;
+           }
+           button {
+            display: none;
+           }
+        }
+
+        @media screen and (max-width:599px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                border:1px solid gray;
+                padding: 10px;
+                font-family: Arial;
+            }
+            .nav-items {
+                display: none;
+            }
+            button {
+                display: inline;
+            }
+        }
+        .brand-title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        button {
+            font-size: 25px;
+            border:none;
+        }
+    </style>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav>
+        <button class="bi bi-justify"></button>
+        <div class="brand-title">Amazon</div>
+        <div class="nav-items">
+            <span>Home</span>
+            <span>About</span>
+            <span>Contact</span>
+            <span>Blog</span>
+        </div>
+    </nav>
+</body>
+</html>
+
+

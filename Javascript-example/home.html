@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+           document.getElementById("userid").innerHTML = document.cookie.slice(document.cookie.indexOf("=")+1);
+        }
+        function Logout(){
+           
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2> <span id="userid"></span> - Home - <button onclick="Logout()">Logout</button></h2>
+</body>
+</html>

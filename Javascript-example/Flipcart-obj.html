@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var product = {
+            "tital": "Apple iPhone 15(Black, 128 GB)",
+            "Price": 69999,
+            "rate": {"Rate": 4.6, "rating": 38526, "Reviews": 2148},
+            "Offers": ["Bank OfferGet ₹50 Instant Discount on first Flipkart UPI transaction on order of ₹200 and aboveT & C",
+                       "Bank Offer5 % Cashback on Flipkart Axis Bank CardT & C",
+                       "Bank Offer₹2000 Off On ICICI Bank Credit Non EMI, Credit and Debit Card EMI TransactionsT & C",
+                       "Special PriceGet extra ₹7901 off(price inclusive of cashback / coupon)T & C"
+            ],
+            "image": "../public/images/Apple iphone 15 (black, 128 GB).jpg"
+        }
+        function bodyload() {
+            document.getElementById("imgProduct").src = product.image;
+            document.getElementById("lbltitl").innerHTML = product.tital;
+            document.getElementById("reting").innerHTML = product.rate.Rate + "<span class='bi bi-star-fill'></span>"
+            document.getElementById("reviews").innerHTML = `${product.rate.rating.toLocaleString()} rating & ${product.rate.Reviews.toLocaleString() }`;
+            document.getElementById("lblprice").innerHTML=product.Price.toLocaleString('en-in', {style :"currency", currency:'INR'});
+            product.Offers.map(function(offer){
+            var li = document.createElement("li");
+            li.className="bi bi-tag-fill text-success my-2";
+            li.innerHTML=`<span class="text-secondary">${offer}</span>`;
+            document.getElementById("offers").appendChild(li);
+        })
+        }
+       
+    </script>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+
+</head>
+
+<body class="container-fluid" onload="bodyload()">
+    <div class="ror my-3">
+        <div class="col-3">
+            <img  width="100%" id="imgProduct">
+        </div>
+        <div class="col-9">
+            <div class="h4" id="lbltitl"></div>
+        </div>
+        <div>
+            <span id="reting" id="badge rounded rounded-pill bg-success text-white"></span>
+            <span id="reviews" id="mx-3 fw-bold"></span>
+        </div>
+        <div class="m-3">
+            <div id="lblprice" id="h1"></div>
+        </div>
+        <div class="m-2">
+            <ul id="offers">
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

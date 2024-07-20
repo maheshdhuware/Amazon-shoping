@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flipcart iphone object</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var product = {
+            "tital": "apple iphone 15(green,256 GB)",
+            "price": 170999,
+            "rating": { "rate": 4.2, "ratings": 15754, "reviews": 1694 },
+            "offers":
+           [ "Bank OfferGet ₹50 instant discount on first Flipkart UPI txn on order of ₹200 and aboveT&C"
+            "Bank Offer5% Cashback on Flipkart Axis Bank CardT&C"
+            "Bank Offer₹500 off on Flipkart UPIT&C"
+            "Special PriceGet extra ₹14901 off (price inclusive of cashback/coupon)T&C"]
+        }
+        function bodyload() {
+            document.getElementById("imgproduct").src = pruduct.image;
+            document.getElementById("lbitital").innerHTML = product.tital;
+            document.getElementById("rating").innerHTML = pruduct.rating.rate +
+            
+        }
+
+    </script>
+</head>
+
+<body class="container-fluid" onload="bodyload()">
+    <div class="row">
+       <div class="col-6">
+        <img with="100%" id="imgproduct" >
+       </div>
+       <div class=""col-6>
+           <div class ="h4" id="ibltitl"> </div>
+       </div>
+    </div>
+
+</body>
+
+</html>

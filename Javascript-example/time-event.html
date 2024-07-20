@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Tip1(){
+            document.querySelector("p").innerHTML = "1. Camel Case is required for naming Variables";
+        }
+        function Tip2(){
+            document.querySelector("p").innerHTML = "2. Function scope variables can be declared with var keyword";
+        }
+        function Tip3(){
+            document.querySelector("p").innerHTML = "3. Related data is stored in an Object JSON";
+        }
+        var t1, t2, t3;
+        function ShowClick(){
+            Tip1();
+            Tip2();
+            Tip3();
+        //   t1 =  setTimeout(Tip1, 2000);
+        //   t2 =  setTimeout(Tip2, 5000);
+        //   t3 =  setTimeout(Tip3,10000);
+        }
+        // function CancelClick(){
+        //     clearTimeout(t2);
+        // }
+    </script>
+</head>
+<body>
+    <button onclick="ShowClick()">Show Tips</button>
+    <!-- <button onclick="CancelClick()">Cancel Tip-2</button> -->
+    <p></p>
+</body>
+</html>

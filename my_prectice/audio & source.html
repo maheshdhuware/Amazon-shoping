@@ -1,0 +1,42 @@
+<!-- example on  -->
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+	<title>Ex32</title>
+	<link rel="icon" href="logo1.png">
+  </head>
+  <body>
+	<div>
+	  <h2><u>Account Creation Page</u></h2>
+	  <form action="newuser.html" method="post">
+	    <label for="fna">Fullname</label>
+		<span>*</span> <bR>
+		<input type="text" id="fna" name="fna" required autofocus>
+		<br>
+		<label for="pwd">set Password</label> 
+		<span>*</span> <bR>
+		<input type="password" id="pwd" name="pwd" required>
+		<br>
+		<label for="phone">Contact number</label> <span>*</span> <br>
+		<input type="text" id="phone" name="phone" required maxlength="10">
+		<br>
+		<label for="em">Email Id</label>
+		<span>*</span> <bR>
+		<input type="email" id="em" name="em" required>
+		<br>
+		<label for="dob">Date of Birth</label> <br>
+		<input type="date" id="dob" name="dob" min="1900-01-01" max="2024-03-06">
+		<bR>
+		<label>Gender:</label> <br>
+		<input type="radio" id="g1" name="gen"> <label>Female</label> &nbsp; 
+		<input type="radio" id="g2" name="gen"> <label>Male</label> &nbsp; 		
+		<input type="radio" id="g3" name="gen"> <label>Others</label>
+		<br>
+		<input type="checkbox" id="tc" name="tc" required> <label>I Accepted all terms & conditions</label>
+		<bR>
+		<button type="submit">Create User</button>
+	  </form>
+	</div> 
+  </body>
+</html>
+

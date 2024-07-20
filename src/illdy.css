@@ -1,0 +1,91 @@
+.bg-style {
+    background-image: url(../public/images/woman-exploring.avif);
+    background-repeat: no-repeat;
+    background-size: 100% 600px;
+    background-attachment: fixed;
+}
+
+header {
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+}
+
+main {
+    height: 600px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-title {
+    font-family: arial;
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.main-dot {
+    border-radius: 50%;
+    /* border: 2px solid black; */
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin: 10px;
+    background-color: yellow;
+}
+.main-dot2{
+    border-radius: 50%;
+    /* border: 2px solid black; */
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin: 10px;
+    background-color: red;
+}
+.main-dot {
+    border-radius: 50%;
+    /* border: 2px solid black; */
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin: 10px;
+    background-color: yellow;
+}
+
+.main-subtitle {
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+nav span:hover{
+   color: yellow;
+}
+nav span {
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.brand-title {
+    font-family: freestyle script;
+    font-size: 40px;
+}
+
+section {
+    background-color: white;
+    height: 1000px;
+}
+
+.start-buttons {
+    margin-top: 100px;
+}

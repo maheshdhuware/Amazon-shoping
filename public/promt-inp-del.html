@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CreateClick() {
+            let folderName = prompt("Enter Folder Name");
+            if (folderName === "") {
+                alert("Folder name can't be empty");
+            } else if (folderName === null) {
+                alert("You canceled.");
+            } else {
+                let p = document.querySelector("p");
+                let folderElement = document.createElement("span");
+                folderElement.textContent = folderName;
+                folderElement.style.cursor = "pointer";
+                folderElement.style.display = "block";
+                folderElement.onclick = function() {
+                    alert("are you sure delete?")
+                    p.removeChild(folderElement);
+                };
+                p.appendChild(folderElement);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="CreateClick()">New Folder</button>
+    <p></p>
+</body>
+</html>

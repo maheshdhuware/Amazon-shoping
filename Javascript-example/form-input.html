@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript">
+      document.getElementById("")
+    </script>
+</head>
+
+<body class="container-fluid">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#Register" class="btn btn-primary mt-2" >Register-product</button>
+    <div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="Register">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Register product</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>name</dt>
+                        <dd><input type="text" id="txtName" class="form-control"></dd>
+                        <dt>price</dt>
+                        <dd><input type="number" id="txtprice" class="form-control"></dd>
+                        <dt>shopping To</dt>
+                        <dd>
+                            <select class="istCites">
+                                <option>select city</option>
+                                <option>hyderabd</option>
+                                <option>Delhi</option>
+                            </select>
+                        </dd>
+                        <dt class="optstock">stock</dt>
+                        <dd>
+                            <input class="form-check-input" type="checkbox">
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button clsss="btn btn-primary">Register</button>
+                    <button class="btn ntn-denger" data-bs-dismiss=modal>cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

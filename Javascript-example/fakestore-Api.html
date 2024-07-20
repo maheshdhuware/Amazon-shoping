@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+<script>
+
+function LoadCategories(){
+            fetch("https://fakestoreapi.com/products/categories")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(categories){
+                categories.unshift("all");
+                categories.map(function(category){
+                    var option = document.createElement("option");
+                    option.text = category.toUpperCase();
+                    option.value = category;
+                    document.getElementById("lstCategories").appendChild(option);
+                })
+            })
+        }
+
+        function products(){
+            fetch("https://fakestoreapi.com/products")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+              products.map(function(product)){
+                var div = document.createElement("div")
+                div 
+
+              })
+            })
+        }
+
+    function bodyload(){
+        LoadCategories();
+    }
+</script>
+
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <header class="d-flex justify-content-between m-2 p-2 bg-dark text-white" >
+        <span class="h2">shopper.</span>
+        <nav>
+        <span class="mx-2"><a href="">Home</a></span>
+        <span class="mx-2"><a href="">Electronics</a></span>
+        <Span class="mx-2"><a href="">Jewalery</a></Span>
+        <span class="mx-2"><a href="">men fashion</a></span>
+        <span class="mx-2"><a href="">women Fashoin</a></span>
+        </nav>
+        <div>
+            <span class="bi bi-heart mx-2"></span>
+            <span class="bi bi-search mx-2"></span>
+            <span class="bi bi-cart mx-2"></span>
+        </div>
+    </header>
+    <section class="row mt-3">
+     <nav class="col-2">
+        <label for="">select categery</label>
+
+     <div>
+        <select class="form-select" id="lstCategories"></select>
+     </div>
+     </nav>
+    </section>
+    <main>
+
+    </main>
+
+</body>
+</html>

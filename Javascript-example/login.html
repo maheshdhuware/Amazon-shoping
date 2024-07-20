@@ -1,0 +1,27 @@
+login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            document.cookie = `userid=${document.getElementById("UserId").value}`;
+            location.href = "home.html";
+        }
+    </script>
+</head>
+<body>
+    <noscript>Please Enable Javascript on your browser.</noscript>
+    <h2>Login</h2>
+    <dl>
+        <dt>User Id</dt>
+        <dd><input type="text" id="UserId"></dd>
+        <dt>Password</dt>
+        <dd><input type="password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+</body>
+</html>

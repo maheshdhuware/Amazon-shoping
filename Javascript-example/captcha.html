@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script>
+            var code;
+            function GenerateCode(){
+                  code = `${Math.round(Math.random() * 10)} ${Math.round(Math.random() * 10)} ${Math.round(Math.random() * 10)} ${Math.round(Math.random() * 10)} ${Math.round(Math.random() * 10)} ${Math.round(Math.random() * 10)}`;                  
+                  document.getElementById("code").innerHTML = code;
+            }
+            function LoginClick(){
+                  var txtCode = document.getElementById("txtCode").value;
+                  if(txtCode==code)
+                  {
+                        document.write('Login success')
+                  } else {
+                        alert('Invalid Code');
+                  }
+            }
+      </script>
+</head>
+<body onload="GenerateCode()">
+      <dl>
+            <dt>User Name</dt>
+            <dd><input type="text"></dd>
+            <dt>Password</dt>
+            <dd><input type="password"></dd>
+            <dt>Verify Code</dt>
+            <dd id="code"></dd>
+            <dd><input type="text" id="txtCode"></dd>
+      </dl>
+      <button onclick="LoginClick()">Login</button>
+</body>
+</html>

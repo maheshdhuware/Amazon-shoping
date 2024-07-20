@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<script>
+
+    function LoadCities(){
+        document.getElementById("lstCities").innerHTML="";
+        citis.map (function(city){
+            var option = document.createElement("option");
+        });
+        document.getElementById("lblCount").inner.HTML=`Total Citis:
+        ${cities.length}`;
+    }
+  function bodyload(){
+    LoadCities();
+  }
+  function AddClick(){
+            var cityName = document.getElementById("txtCity").value;
+            if(cities.indexOf(cityName)==-1) {
+                cities.push(cityName);
+                alert(`${cityName} Added Successfully..`);
+                LoadCities();
+                document.getElementById("txtCity").value = "";
+            } else {
+                alert(`${cityName} Exists`);
+            }
+        }
+  function SortAscClick(){
+    cities.sort();
+    LoadCities();    
+  }
+  function SortDescClick(){
+            cities.sort();
+            cities.reverse();
+            LoadCities();
+        }
+  function RemoveClick(){
+            var selectedCity = document.getElementById("lstCities").value;
+            var selectedCityIndex = cities.indexOf(selectedCity);
+            var flag = confirm(`Are you sure?\nWant to Delete ${selectedCity}`);
+            if(flag==true)
+            {
+                cities.splice(selectedCityIndex,1);
+                LoadCities();
+            }
+        }
+
+  function ClearAll(){
+            cities.length = 0;
+            LoadCities();
+        }
+
+</script>
+
+<body onload="bodyload" class="container-fluid">
+    <h2>Array manipuletions</h2>
+    <div class="w-25">
+        <div>
+            <label class="form-label fw-bold">Add City</label>
+            <div class="input-group">
+                <input type="text" id="txtcity" class="form-control">
+                <button class="btn btn-button" onclick="AddClick">Add</button>
+            </div>
+            <div class="my-2">
+                <button onclick="SortAscClick()" class="bi-sort-alpha-down btn btn-success"></button>
+                <button onclick="SortDescClick()" class="bi-sort-alpha-up btn btn-success"></button>
+            </div>
+            <div>
+                <select id="lstCities" class="form-select" size="3">
+
+                </select>
+                <lebale id="lblcount" claaa="form lable fw-bold"></lebale>
+            </div>
+            <div>
+                <button onclick="removeClick()" class="btn btn-danger"><span class="bi bi-trash-fill"></span>Remove Select</button>
+                <button onclick="clearAll()" class="btn btn-outline-danger"><span class="bi bi-trash2-fill"></span>clear All</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

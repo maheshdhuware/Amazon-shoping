@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function bodyload(){
+            var  data = [];
+            var http = new.XMLHttpRequest();
+            http.open("get","../data/ipl-points.json",true);
+            http.sent();
+
+            http.onreadystatechange = function(){
+                if (http.readystate==4{parse(http.response);
+                    data.map(function(item))
+                   var.className = "card p-2 m-2";
+                   div.className = "250px"
+                   div.innerhtml = `<img src=${item.logo} class="card-img-top" height="100">
+                   div class="card-header"
+                }) 
+            }
+
+
+            var 
+        }
+
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload">
+      <main class="d-flex mt-3">
+
+      </main>
+</body>
+</html>

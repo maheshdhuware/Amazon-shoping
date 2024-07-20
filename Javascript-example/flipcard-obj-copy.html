@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+
+        var product = {
+            "title": "Apple iPhone 15 (Green, 256 GB)",
+            "price": 170999,
+            "rating": { "rate": 4.2, "ratings": 15754, "reviews": 694 },
+            "offers": [
+                "Bank OfferGet ₹25* instant discount for the 1st Flipkart Order using Flipkart UPIT&C",
+                "Bank Offer₹1000 off on UPI TransactionsT&C",
+                "Bank Offer5% Cashback on Flipkart Axis Bank CardT&C",
+                "Special PriceGet extra ₹6901 off (price inclusive of cashback/coupon)T&C"
+            ],
+            "image": "../public/images/iphone-green.jpg"
+        }
+
+        function bodyload() {
+            document.getElementById("imgProduct").src = product.image;
+            document.getElementById("lblTitle").innerHTML = product.title;
+            document.getElementById("rating").innerHTML = product.rating.rate + " <span class='bi bi-star-fill'></span>";
+            document.getElementById("reviews").innerHTML = `${product.rating.ratings.toLocaleString()} ratings & ${product.rating.reviews.toLocaleString()} reviews`;
+            document.getElementById("lblPrice").innerHTML = product.price.toLocaleString('en-in', { style: 'currency', currency: 'INR' });
+
+            product.offers.map((ele)=> {
+                var li = document.createElement("li");
+                li.className = "bi bi-tag-fill text-success my-2"
+                li.innerHTML = `<span class="text-secondary px-2">${ele}</span>`;
+                document.getElementById("offers").appendChild(li);
+            })
+
+        }
+    </script>
+    <style>
+        ul {
+            list-style: none;
+            margin-left: -30px;
+        }
+    </style>
+    
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="row mt-3">
+        <div class="col-3">
+            <img width="100%" id="imgProduct">
+        </div>
+        <div class="col-9">
+            <div class="h4" id="lblTitle"></div>
+            <div>
+                <span id="rating" class="badge rounded rounded-pill bg-success text-white"> </span>
+                <span id="reviews" class="mx-3 text-secondary fw-bold"></span>
+            </div>
+            <div class="my-3">
+                <div id="lblPrice" class="h1"></div>
+            </div>
+            <div class="my-2">
+                <ul id="offers">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

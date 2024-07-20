@@ -1,0 +1,52 @@
+<script>
+    var str = "page.html?id=45&name=Mobile"
+
+  var name =  str.slice(str.lastIndexOf("=")+1);
+  console.log(name)
+
+  document.write("Name=" + name + "<br>");
+  document.write("Id=" + str.slice(str.indexOf("=")+1, str.indexOf("&")));
+</script>
+<!-- <script>
+    str = 'sairam';
+    var op = str.slice(str.lastIndexOf('a')+1)
+    console.log(op);
+    
+</script> -->
+
+<!-- <script>
+    var str = 'Mahesh';
+    var output = str.slice(2,4)
+    console.log(output)
+</script> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function VerifyEmail(){
+         var email = document.getElementById("txtEmail").value;
+         var lblEmail = document.getElementById("lblEmail");
+         if(email.indexOf("@")==-1)
+         {
+            lblEmail.innerHTML = "Invalid Email".fontcolor('red');
+         } else {
+            lblEmail.innerHTML = "";
+         }
+      }
+   </script>
+</head>
+<body>
+    <dl>
+      <dt>Email</dt>
+      <dd><input type="text" onblur="VerifyEmail()" id="txtEmail"></dd>
+      <dd id="lblEmail"></dd>
+    </dl>
+</body> 
+</html> -->
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+   <script>
+      function VerifyCard(){
+         var card = document.getElementById("txtCard").value;
+         var imgCard = document.getElementById("imgCard");
+         if(card.startsWith("44")) {
+            imgCard.src = "../public/images/visa.png";
+         } else {
+            imgCard.src = "../public/images/master.png";
+         }
+      }
+      function VerifyEmail(){
+         var email = document.getElementById("txtEmail").value;
+         var lblEmail = document.getElementById("lblEmail");
+         if(email.endsWith("hdfc.com")) {
+            lblEmail.innerHTML = "";
+         } else {
+            lblEmail.innerHTML = "You must enter a valid HDFC mail account".fontcolor('red');
+         }
+      }
+   </script>
+</head>
+<body class="container-fluid">
+   <dl class="mt-4 w-25">
+      <dt>Your Card Number</dt>
+      <dd class="input-group"><input type="text" onblur="VerifyCard()" id="txtCard" size="16" maxlength="16" class="form-control"><img id="imgCard" width="80" height="40"></dd>
+      <dt>Your HDFC Email</dt>
+      <dd><input type="email" class="form-control" onblur="VerifyEmail()" id="txtEmail"></dd>
+      <dd id="lblEmail"></dd>
+   </dl>
+</body>
+</html>

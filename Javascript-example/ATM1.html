@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userDetails = {
+            Card: "4444555566667890",
+            Cvv: "234",
+            Expiry: "2026"
+        }
+        function VerifyCard(){
+            var card = document.getElementById("txtCard").value;
+            if(card===userDetails.Card){
+                document.getElementById("txtCvv").disabled = false;
+                document.getElementById("cvvContainer").style.display = "block";
+            }else{
+                alert ("invailed card number");
+            }
+        }
+        function VerifyCvv(){
+            var cvv = document.getElementById("txtCvv").value;
+            if(cvv===userDetails.Cvv) {
+                document.getElementById("lstExpiry").disabled = false;
+                document.getElementById("expiryContainer").style.display = "block";
+            }else{
+                alert ("invailed cvv");
+            }
+        }
+        function VerifyExpiry(){
+            var expiry = document.getElementById("lstExpiry").value;
+            if(expiry===userDetails.Expiry) {
+                document.getElementById("btnPay").disabled = false;
+                document.getElementById("btnPay").style.display = "block";
+            }else{
+                alert ("invailed expiry");
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Payment</legend>
+        <dl>
+            <dt>Card Number</dt>
+            <dd><input type="text" onblur="VerifyCard()" id="txtCard"></dd>
+            <div id="cvvContainer" style="display: none;">
+                <dt>Cvv</dt>
+                <dd><input type="text" id="txtCvv" onblur="VerifyCvv()" disabled size="4"></dd>
+            </div>
+            <div id="expiryContainer" style="display: none;">
+                <dt>Expiry</dt>
+                <dd>
+                    <select id="lstExpiry" disabled onchange="VerifyExpiry()" >
+                        <option>Select Expiry</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                    </select>
+                </dd>
+            </div>
+        </dl>
+        <button id="btnPay" style="display: none;">Pay</button>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+      margin: 0; /* Remove default margin */
+      padding: 0 !important; /* Remove default padding */
+    }
+        .grid-box{display:grid;
+        /* grid-template-columns: 100px 100px 100px; */
+        grid-template-columns:24.3% 24.3% 24.3% 24.3% ;
+        /* grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto auto; */
+        grid-template-rows: 100px 100px 100px;
+        column-gap: 10px;
+        row-gap: 80px;
+        background-color: cyan;
+        padding :40px 20px 20px 20px;
+        text-align: center;
+        height: 530px;
+        
+        }
+
+        .grid-box div{background-color: pink;
+            font: size 10px;
+            text-align: center;
+            /* pa */
+        }
+        .box{
+            /* width: 200px; */
+            height: 160px;
+        }
+    </style>
+</head>
+<body> <!--container-->
+   <div class="grid-box" >
+    <div class="box">january</div>
+    <div class="box">febuary</div>
+    <div class="box">march</div>
+    <div class="box">april</div>
+    <div class="box">may</div>
+    <div class="box">june</div>
+    <div class="box">july</div>
+    <div class="box">auguast</div>
+    <div class="box">september</div>
+    <div class="box">october</div>
+    <div class="box">november</div>
+     <div class="box">december</div>
+   </div>
+</body>
+</html>

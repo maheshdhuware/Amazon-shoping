@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+
+        function LoadCategories(){
+            $.ajax({
+                method: "get",
+                url: "https://fakestoreapi.com/products/categories&quot",
+                success: (categories) => {
+                    categories.unshift("all");
+                    categories.map(category=>{
+                         $(`<option value=${category}>${category.toUpperCase()}</option>`).appendTo("#lstCategories");
+                    })
+                }
+            })
+        }
+
+        function LoadProducts(url){
+            $("main").html("");
+            $.ajax({
+                method:"get",
+                url: url,
+                success: (products) => {
+                    products.map(product=>{
+                        $(`
+                          <div class="card m-2 p-2" style="width:200px">
+                             <img src=${product.image} class="card-img-top" height="140">
+                             <div class="card-header" style="height:130px">
+                                ${product.title}
+                             </div>
+                          </div>
+                        `).appendTo("main");
+                    })
+                }
+            })
+        }
+
+
+        $(function(){
+            LoadCategories();
+            LoadProducts(`https://fakestoreapi.com/products`);
+
+            $("#lstCategories").change(()=>{
+                 var categoryName = $("#lstCategories").val();
+                 if(categoryName=="all"){
+                    LoadProducts(`https://fakestoreapi.com/products`);
+                 } else {
+                    LoadProducts(`https://fakestoreapi.com/products/category/${categoryName}`);
+                 }
+            })
+
+        })
+    </script>
+</head>
+<body class="container-fluid">
+   <header class="text-center bg-dark text-white p-2 fs-3">
+       Shopper
+   </header>
+   <section class="row">
+      <nav class="col-2">
+         <div>
+            <label class="form-label fw-bold">Select Category</label>
+            <div>
+                <select class="form-select" id="lstCategories">
+
+                </select>
+            </div>
+         </div>
+      </nav>
+      <main class="col-10 d-flex flex-wrap overflow-auto" style="height: 500px;">
+
+      </main>
+   </section>
+</body>
+</html>

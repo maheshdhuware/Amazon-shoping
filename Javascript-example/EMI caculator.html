@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<style>
+    input[type="range"] {
+        width: 100%
+    }
+</style>
+<script>
+    function AmountChange() {
+        document.getElementById("txtAmount").value = document.getElementById("amountrange").value;
+    }
+    function YeareChange() {
+        document.getElementById("txtYears").value = document.getElementById("yearrange").value;
+    }
+    function RateChange() {
+        document.getElementById("txtrate").value = document.getElementById("raterange").value;
+    }
+
+    function Calculete() {
+        var p = parseInt(document.getElementById("txtAmount").value);
+        var r = parseFloat((document.getElementById("txtrate").value) / 12 / 100);
+        var n = parseInt(document.getElementById("txtYears").value) * 12;
+        var EMI = p * r * (Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        
+        console.log("p :" + p)
+        console.log("r :" + r)
+        console.log("n :" + n)
+        console.log("math.pow :" + Math.pow(1 + r, n))
+        console.log("dr :" + (Math.pow(1 + r, n) - 1))
+
+        document.getElementById("lblmsg").innerHTML = `Your installment amount is <b> ${EMI.toLocaleString('en-in', { style: 'currency', 'currency': 'INR' })} </b> for ${Math.round(n)}months`;
+
+    }
+</script>
+
+<body class="container-fluid ">
+    <div>
+        <h3 class="text-center">Personal Loan EMI Calculator</h3>
+        <div class="row d-flex my-4">
+            <div class="col mx-2">
+                Amount you need <input type="text" id="txtAmount">
+            </div>
+            <div class="col mx-2">
+                for <input type="text" size="2" id="txtYears"> Years
+            </div>
+            <div class="col mx-2">
+                interest Rate <input type="text" size="4" id="txtrate"> %
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mx-4">
+                <input type="range" onchange="AmountChange()" min="100000" max="1000000" value="1000000"
+                    id="amountrange">
+            </div>
+            <div class="col mx-4">
+                <input type="range" onchange="YeareChange()" min="1" max="5" value="1" id="yearrange">
+            </div>
+            <div class="col mx-4">
+                <input type="range" onchange="RateChange()" min="10.5" max="21" value="10.5" id="raterange">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col d-flex justify-content-between">
+                <span>100000</span>
+                <span>1000000</span>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <span>1 year</span>
+                <span>5 year</span>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <span>10.5%</span>
+                <span>21%</span>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col text-end">
+                <button onclick="Calculete()" class="btn btn-primary">calculete</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col ">
+                <p id="lblmsg" class="text-center fs-4"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
